@@ -1,0 +1,14 @@
+name: Build and Test
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: node:lts-slim
+
+    steps:
+      - uses: actions/checkout@v4
+      - run: yarn build
+      - run: yarn test
