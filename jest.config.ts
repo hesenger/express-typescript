@@ -1,11 +1,12 @@
 import type { JestConfigWithTsJest } from "ts-jest";
 
-const ONE_SECOND = 1000;
+const HALF_SECOND = 500;
 
 const jestConfig: JestConfigWithTsJest = {
   preset: "ts-jest",
   verbose: false,
-  testTimeout: ONE_SECOND,
+  testTimeout: HALF_SECOND,
+  testPathIgnorePatterns: ["/node_modules/", "/dist/"],
 };
 
 export default jestConfig;
